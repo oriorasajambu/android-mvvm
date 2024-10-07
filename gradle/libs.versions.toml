@@ -1,0 +1,140 @@
+[versions]
+agp = "8.6.1"
+kotlin = "1.9.0"
+
+appcompat = "1.7.0"
+guava = "33.3.1-android"
+coreKtx = "1.13.1"
+activity = "1.9.2"
+fragmentKtx = "1.8.4"
+desugar = "2.1.2"
+
+material = "1.12.0"
+lottie = "6.5.2"
+shimmer = "0.5.0"
+swipelayoutrefresh = "1.1.0"
+constraintlayout = "2.1.4"
+recyclerview = "1.3.2"
+recyclerviewSelection = "1.1.0"
+glide = "4.16.0"
+
+okHttpUrlConnection = "3.12.10"
+okHttpLoggingInterceptor = "5.0.0-alpha.10"
+retrofit = "2.9.0"
+gson = "2.11.0"
+chucker = "3.5.2"
+
+firebaseBom = "33.4.0"
+firebaseServices = "4.4.2"
+firebaseCrashlytics = "3.0.2"
+
+hiltDagger = "2.51"
+hiltCompiler = "1.2.0"
+
+crypto = "1.1.0-alpha06"
+
+rxJava = "3.1.5"
+rxAndroid = "3.0.0"
+coroutines = "1.8.1"
+
+ksp = "1.9.0-1.0.13"
+
+mockk = "1.13.2"
+truth = "1.1.4"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+
+[libraries]
+# Core
+kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref = "kotlin" }
+core-guava = { group = "com.google.guava", name = "guava", version.ref = "guava" }
+core-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+core-androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+core-androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+core-androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" }
+core-androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
+core-desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar" }
+
+#UI
+ui-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+ui-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+ui-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+ui-recyclerview-selection = { group = "androidx.recyclerview", name = "recyclerview-selection", version.ref = "recyclerviewSelection" }
+ui-lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+ui-shimmer = { group = "com.facebook.shimmer", name = "shimmer", version.ref = "shimmer" }
+ui-swipe-layout-refresh = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swipelayoutrefresh" }
+ui-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+ui-glide-ksp = { group = "com.github.bumptech.glide", name = "ksp", version.ref = "glide" }
+
+# Firebase
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
+firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
+firebase-inappmessaging = { group = "com.google.firebase", name = "firebase-inappmessaging" }
+firebase-ml-downloader = { group = "com.google.firebase", name = "firebase-ml-modeldownloader" }
+
+# Dagger Hilt
+dagger-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltDagger" }
+dagger-hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hiltDagger" }
+dagger-hilt-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltCompiler" }
+dagger-hilt-test = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hiltDagger" }
+
+# Reactive
+reactive-rx-java = { group = "io.reactivex.rxjava3", name = "rxjava", version.ref = "rxJava" }
+reactive-rx-android = { group = "io.reactivex.rxjava3", name = "rxandroid", version.ref = "rxAndroid" }
+reactive-couroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+reactive-couroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# Networking
+network-okhttp-urlconnection = { group = "com.squareup.okhttp3", name = "okhttp-urlconnection", version.ref = "okHttpUrlConnection" }
+network-okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttpLoggingInterceptor" }
+network-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+network-retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+network-retrofit-rx-java = { group = "com.squareup.retrofit2", name = "adapter-rxjava3", version.ref = "retrofit" }
+network-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+#Debug
+network-chucker = { group = "com.github.chuckerteam.chucker", name = "library", version.ref = "chucker" }
+
+#Release
+network-chucker-no-op = { group = "com.github.chuckerteam.chucker", name = "library-no-op", version.ref = "chucker" }
+
+# Security
+security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "crypto" }
+security-crypto-extension = { group = "androidx.security", name = "security-crypto-ktx", version.ref = "crypto" }
+
+# Testing
+testing-mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+testing-mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
+testing-mockk-agent = { group = "io.mockk", name = "mockk-agent", version.ref = "mockk" }
+testing-truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
+testing-junit = { group = "junit", name = "junit", version.ref = "junit" }
+testing-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+testing-androidx-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+
+[bundles]
+core = ['core-guava', 'core-androidx-appcompat', 'core-androidx-ktx', 'core-androidx-activity', 'core-androidx-activity-ktx', 'core-androidx-fragment-ktx']
+core-jdk = ['core-desugar']
+ui = ['ui-material', 'ui-constraintlayout', 'ui-recyclerview', 'ui-recyclerview-selection', 'ui-lottie', 'ui-shimmer', 'ui-swipe-layout-refresh', 'ui-glide']
+firebase = ['firebase-analytics', 'firebase-crashlytics', 'firebase-messaging', 'firebase-inappmessaging', 'firebase-ml-downloader']
+dagger = ['dagger-hilt-android', 'dagger-hilt-test']
+reactive = ['reactive-rx-java', 'reactive-rx-android', 'reactive-couroutines-core', 'reactive-couroutines-android']
+ksp = ['dagger-hilt-android-compiler', 'dagger-hilt-compiler', "ui-glide-ksp"]
+network = ['network-okhttp-urlconnection', 'network-okhttp-logging-interceptor', 'network-retrofit', 'network-retrofit-converter-gson', 'network-retrofit-rx-java', 'network-gson']
+network-debug = ['network-chucker']
+network-release = ['network-chucker-no-op']
+security = ['security-crypto', 'security-crypto-extension']
+testing = ['testing-mockk', 'testing-mockk-android', 'testing-mockk-agent', 'testing-truth', 'testing-junit', 'testing-androidx-junit', ]
+testing-android = ['testing-androidx-espresso']
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hiltDagger" }
+kotlin-symbolic-processing = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+firebase-services = { id = "com.google.gms.google-services", version.ref = "firebaseServices" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlytics" }
+
