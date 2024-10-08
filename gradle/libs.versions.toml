@@ -8,6 +8,7 @@ coreKtx = "1.13.1"
 activity = "1.9.2"
 fragmentKtx = "1.8.4"
 desugar = "2.1.2"
+lifecycle = "2.8.6"
 
 material = "1.12.0"
 lottie = "6.5.2"
@@ -55,6 +56,13 @@ core-androidx-activity = { group = "androidx.activity", name = "activity", versi
 core-androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" }
 core-androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
 core-desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar" }
+core-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+core-lifecycle-service = { group = "androidx.lifecycle", name = "lifecycle-service", version.ref = "lifecycle" }
+core-lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "lifecycle" }
+core-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+core-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+core-lifecycle-viewmodel-savedstate = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref = "lifecycle" }
+core-lifecycle-compiler = { group = "androidx.lifecycle", name = "lifecycle-compiler", version.ref = "lifecycle" }
 
 #UI
 ui-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
@@ -65,7 +73,7 @@ ui-lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lott
 ui-shimmer = { group = "com.facebook.shimmer", name = "shimmer", version.ref = "shimmer" }
 ui-swipe-layout-refresh = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swipelayoutrefresh" }
 ui-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
-ui-glide-ksp = { group = "com.github.bumptech.glide", name = "ksp", version.ref = "glide" }
+ui-glide-compiler = { group = "com.github.bumptech.glide", name = "ksp", version.ref = "glide" }
 
 # Firebase
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
@@ -116,12 +124,13 @@ testing-androidx-espresso = { group = "androidx.test.espresso", name = "espresso
 
 [bundles]
 core = ['core-guava', 'core-androidx-appcompat', 'core-androidx-ktx', 'core-androidx-activity', 'core-androidx-activity-ktx', 'core-androidx-fragment-ktx']
+lifecycle = ['core-lifecycle-livedata-ktx', 'core-lifecycle-process', 'core-lifecycle-runtime', 'core-lifecycle-service', 'core-lifecycle-viewmodel-ktx', 'core-lifecycle-viewmodel-savedstate']
 core-jdk = ['core-desugar']
 ui = ['ui-material', 'ui-constraintlayout', 'ui-recyclerview', 'ui-recyclerview-selection', 'ui-lottie', 'ui-shimmer', 'ui-swipe-layout-refresh', 'ui-glide']
 firebase = ['firebase-analytics', 'firebase-crashlytics', 'firebase-messaging', 'firebase-inappmessaging', 'firebase-ml-downloader']
 dagger = ['dagger-hilt-android', 'dagger-hilt-test']
 reactive = ['reactive-rx-java', 'reactive-rx-android', 'reactive-couroutines-core', 'reactive-couroutines-android']
-ksp = ['dagger-hilt-android-compiler', 'dagger-hilt-compiler', "ui-glide-ksp"]
+ksp = ['dagger-hilt-android-compiler', 'dagger-hilt-compiler', "ui-glide-compiler", 'core-lifecycle-compiler']
 network = ['network-okhttp-urlconnection', 'network-okhttp-logging-interceptor', 'network-retrofit', 'network-retrofit-converter-gson', 'network-retrofit-rx-java', 'network-gson']
 network-debug = ['network-chucker']
 network-release = ['network-chucker-no-op']
