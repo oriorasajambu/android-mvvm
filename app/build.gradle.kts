@@ -103,7 +103,7 @@ dependencies {
     //Core
     implementation(platform(libs.kotlin.bom))
     implementation(libs.bundles.core)
-    coreLibraryDesugaring(libs.bundles.core.jdk)
+    implementation(libs.bundles.lifecycle)
 
     //UI
     implementation(libs.bundles.ui)
@@ -114,7 +114,6 @@ dependencies {
 
     //Dagger
     implementation(libs.bundles.dagger)
-    ksp(libs.bundles.ksp)
 
     //Reactive
     implementation(libs.bundles.reactive)
@@ -130,6 +129,10 @@ dependencies {
     //Testing
     testImplementation(libs.bundles.testing)
     androidTestImplementation(libs.bundles.testing.android)
+
+    //Kotlin Symbolic Processing
+    ksp(libs.bundles.ksp)
+    coreLibraryDesugaring(libs.bundles.core.jdk)
 }
 
 fun getLocalProperties(

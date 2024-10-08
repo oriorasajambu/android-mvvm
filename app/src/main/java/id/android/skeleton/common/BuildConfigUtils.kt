@@ -75,4 +75,11 @@ object BuildConfigUtils {
      * @return The Maps API key.
      */
     fun getMapApiKey() = BuildConfig.MAPS_API_KEY
+
+    /**
+     * Checks if the application is running in debug mode.
+     *
+     * @return `true` if the application is in debug mode, `false` otherwise.
+     */
+    fun isDebug() = BuildConfig.DEBUG
 }
