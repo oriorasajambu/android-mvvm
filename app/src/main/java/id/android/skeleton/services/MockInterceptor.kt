@@ -23,7 +23,7 @@ class MockInterceptor (
     private val context: Context,
 ): Interceptor {
 
-    companion object Constant {
+    companion object {
         private const val CONTENT_TYPE_RESPONSE_BODY = "application/json; charset=utf-8"
 
         private const val TITLE_SUCCESS_MOCK = "Success Mocked"

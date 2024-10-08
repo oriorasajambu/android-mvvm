@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import id.android.skeleton.features.startup.domain.StartupUseCase
-import id.android.skeleton.services.firebase.FirebaseMessagingState
+import id.android.skeleton.services.firebase.states.FirebaseMessagingState
 import id.android.skeleton.services.firebase.FirebaseUseCase
 import javax.inject.Inject
 

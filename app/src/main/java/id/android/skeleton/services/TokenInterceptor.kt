@@ -47,7 +47,7 @@ class TokenInterceptor @Inject constructor(
      * @return True if the request should be intercepted, false otherwise.
      */
     private fun shouldIntercept(request: Request, accessToken: String): Boolean {
-        if (!request.markedForInjection()) return false
+        if (!request.isMarkedForInjection()) return false
         if (EXCLUDED_HEADERS.any { it in request.headers.names() }) return false
         if (accessToken.isBlank() || accessToken.isEmpty()) return false
         return true
@@ -57,6 +57,6 @@ class TokenInterceptor @Inject constructor(
      * Check if request is annotated with `@Authorized` annotation,
      * If it is, it mean it's marked for `Authorization` injection
      */
-    private fun Request.markedForInjection(): Boolean = tag<Invocation>()?.method()
+    private fun Request.isMarkedForInjection(): Boolean = tag<Invocation>()?.method()
         ?.annotations?.toSet()?.find { it is Authorized } != null
 }
