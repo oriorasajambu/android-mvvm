@@ -2,11 +2,12 @@ package id.android.skeleton.services
 
 import android.content.Context
 import android.util.Log
-import com.google.gson.Gson
 import id.android.skeleton.base.annotation.Mock
 import id.android.skeleton.base.data.BaseDataObject
 import id.android.skeleton.common.Constants
 import id.android.skeleton.common.Utils.removeWhiteSpaces
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import okhttp3.Headers
 import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaType
@@ -15,7 +16,6 @@ import okhttp3.Request
 import okhttp3.Response
 import okhttp3.ResponseBody
 import okhttp3.ResponseBody.Companion.toResponseBody
-import org.json.JSONObject
 import retrofit2.Invocation
 import java.io.BufferedReader
 
@@ -102,7 +102,7 @@ class MockInterceptor (
                 headers = headers.build(),
                 statusCode = 408,
                 chainRequest = chainRequest,
-                content = { Gson().toJson(defaultTimeOutResponse).createResponseBody() }
+                content = { Json.encodeToString(defaultTimeOutResponse).createResponseBody() }
             )
         }
 
@@ -130,12 +130,12 @@ class MockInterceptor (
             headers = headers.build(),
             statusCode = 404,
             chainRequest = chainRequest,
-            content = { Gson().toJson(defaultFailedResponse).createResponseBody() }
+            content = { Json.encodeToString(defaultFailedResponse).createResponseBody() }
         )
     }
 
     private fun isJson(input: String): Boolean = try {
-        JSONObject(input)
+        Json.parseToJsonElement(input)
         true
     } catch (e: Exception) {
         false
@@ -150,6 +150,8 @@ class MockInterceptor (
     ): Response {
         Thread.sleep(delay * 1000L)
         return Response.Builder().apply {
+            sentRequestAtMillis(System.currentTimeMillis())
+            receivedResponseAtMillis(System.currentTimeMillis() + (delay * 1000L))
             protocol(Protocol.HTTP_2)
             headers(headers)
             code(statusCode)

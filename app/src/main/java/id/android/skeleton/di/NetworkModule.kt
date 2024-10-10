@@ -3,19 +3,21 @@ package id.android.skeleton.di
 import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
+import com.chuckerteam.chucker.api.RetentionManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import id.android.skeleton.common.BuildConfigUtils
 import id.android.skeleton.common.Constants
 import id.android.skeleton.services.HeaderInterceptor
 import id.android.skeleton.services.MockInterceptor
 import id.android.skeleton.services.TokenInterceptor
 import id.android.skeleton.services.session.SessionUseCase
-import id.android.skeleton.common.BuildConfigUtils
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import okhttp3.OkHttpClient
+import okhttp3.internal.addHeaderLenient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
@@ -72,11 +74,24 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun providesChucker(@ApplicationContext context: Context): ChuckerInterceptor {
+    fun provideChuckerCollector(@ApplicationContext context: Context): ChuckerCollector {
+        return ChuckerCollector(
+            context = context,
+            showNotification = true,
+            retentionPeriod = RetentionManager.Period.ONE_HOUR
+        )
+    }
+
+    @Provides
+    @Singleton
+    fun providesChucker(
+        @ApplicationContext context: Context,
+        chuckerCollector: ChuckerCollector,
+    ): ChuckerInterceptor {
         return ChuckerInterceptor.Builder(context).apply {
-            collector(ChuckerCollector(context))
-            maxContentLength(250000L)
-            alwaysReadResponseBody(false)
+            collector(chuckerCollector)
+            maxContentLength(length = 250000L)
+            alwaysReadResponseBody(enable = true)
         }.build()
     }
 
