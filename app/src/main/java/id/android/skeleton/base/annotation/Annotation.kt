@@ -7,7 +7,7 @@ package id.android.skeleton.base.annotation
  *
  * @property fileName The name of the file containing the mock response data.
  * @property httpCode The HTTP status code to return. Defaults to 200 (OK).
- * @property delay The delay in milliseconds to simulate network latency. Defaults to 0 (no delay).
+ * @property delay The delay in seconds to simulate network latency. e.g 2L (will delay for 2 seconds) Defaults to 0 (no delay).
  * @property headers An array of HTTP headers to include in the response. Each header should be in the format "Header-Name: Header-Value". Defaults to an empty array (no headers).
  *
  * @Retention AnnotationRetention.RUNTIME

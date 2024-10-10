@@ -39,7 +39,7 @@ class HeaderInterceptor private constructor(
             deviceInfo.orDefault(Constants.DEVICE_INFO),
             phoneType.orDefault(Utils.getPhoneType()),
             phoneBrand.orDefault(Utils.getPhoneBrand()),
-            phoneOs.orDefault(Utils.getOSversion()),
+            phoneOs.orDefault(Utils.getOSVersion()),
         )
     }
 

@@ -48,7 +48,7 @@ data class BaseDataObject<T>(
      *
      * @return A [BaseDomainObject.Message] instance.
      */
-    fun Message?.mapToDomain(): BaseDomainObject.Message {
+    fun Message?.asSample(): BaseDomainObject.Message {
         return BaseDomainObject.Message(
             titleEng = this?.titleEng.orEmpty(),
             titleInd = this?.titleInd.orEmpty(),

@@ -22,7 +22,7 @@ glide = "4.16.0"
 okHttpUrlConnection = "3.12.10"
 okHttpLoggingInterceptor = "5.0.0-alpha.10"
 retrofit = "2.9.0"
-gson = "2.11.0"
+kotlinSerialization = "1.6.0"
 chucker = "3.5.2"
 
 firebaseBom = "33.4.0"
@@ -101,7 +101,7 @@ network-okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "l
 network-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 network-retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 network-retrofit-rx-java = { group = "com.squareup.retrofit2", name = "adapter-rxjava3", version.ref = "retrofit" }
-network-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+netowrk-kotlinx-serilalization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerialization" }
 
 #Debug
 network-chucker = { group = "com.github.chuckerteam.chucker", name = "library", version.ref = "chucker" }
@@ -131,7 +131,7 @@ firebase = ['firebase-analytics', 'firebase-crashlytics', 'firebase-messaging', 
 dagger = ['dagger-hilt-android', 'dagger-hilt-test']
 reactive = ['reactive-rx-java', 'reactive-rx-android', 'reactive-couroutines-core', 'reactive-couroutines-android']
 ksp = ['dagger-hilt-android-compiler', 'dagger-hilt-compiler', "ui-glide-compiler", 'core-lifecycle-compiler']
-network = ['network-okhttp-urlconnection', 'network-okhttp-logging-interceptor', 'network-retrofit', 'network-retrofit-converter-gson', 'network-retrofit-rx-java', 'network-gson']
+network = ['network-okhttp-urlconnection', 'network-okhttp-logging-interceptor', 'network-retrofit', 'network-retrofit-converter-gson', 'network-retrofit-rx-java', 'netowrk-kotlinx-serilalization']
 network-debug = ['network-chucker']
 network-release = ['network-chucker-no-op']
 security = ['security-crypto', 'security-crypto-extension']
@@ -141,6 +141,7 @@ testing-android = ['testing-androidx-espresso']
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hiltDagger" }
 kotlin-symbolic-processing = { id = "com.google.devtools.ksp", version.ref = "ksp" }

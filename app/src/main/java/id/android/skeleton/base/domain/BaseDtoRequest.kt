@@ -1,7 +1,7 @@
 package id.android.skeleton.base.domain
 
-import com.google.gson.JsonObject
 import id.android.skeleton.common.Constants
+import kotlinx.serialization.json.JsonElement
 
 /**
  * Represents a base data transfer object for API requests.
@@ -21,5 +21,5 @@ data class BaseDtoRequest(
     val xSecret: String? = null,
     val deviceId: String? = null,
     val osType: String? = null,
-    val body: JsonObject? = null,
+    val body: JsonElement? = null,
 )

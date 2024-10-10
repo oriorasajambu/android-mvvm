@@ -11,6 +11,8 @@ object Constants {
     const val SUCCESS = "SUCCESS"
     const val FAILED = "FAILED"
     const val DEVICE_INFO = "Android"
+    const val NOTIFICATION_CHANNEL = "Skeleton_Notification"
+    const val NOTIFICATION_DATA = "NOTIFICATION_DATA"
 
     /**
      * Contains constants related to HTTP headers.
@@ -28,8 +30,8 @@ object Constants {
 
         const val AUTHORIZATION = "Authorization"
         const val VERSION = "Content-Type"
-        const val X_SECRET = "X-SECRET"
-        const val DEVICE_ID = "DEVICE_ID"
+        const val X_SECRET = "X-Secret"
+        const val DEVICE_ID = "Device-ID"
     }
 
     /**

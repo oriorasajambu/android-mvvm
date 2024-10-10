@@ -1,8 +1,7 @@
-package id.android.skeleton.common
+package id.android.skeleton.common.reactive
 
 import android.util.Log
 import id.android.skeleton.base.presentation.BaseResultState
-import id.android.skeleton.common.reactive.SchedulerProvider
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.disposables.CompositeDisposable
