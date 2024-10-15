@@ -50,7 +50,7 @@
         </service>
 
         <activity
-            android:name=".features.sample.presentation.SampleActivity"
+            android:name=".features.startup.presentation.StartupActivity"
             android:launchMode="singleTask"
             android:taskAffinity=""
             android:excludeFromRecents="true"

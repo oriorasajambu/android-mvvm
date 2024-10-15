@@ -1,0 +1,36 @@
+{
+  "timestamp": "2024-08-16 16:18:56",
+  "sourceSystem": "BACKEND_SERVICES",
+  "traceId": "e1b4f9ae9209b525",
+  "responseKey": "SUCCESS",
+  "message": {
+    "titleEng": "SUCCESS",
+    "titleInd": "SUKSES",
+    "descEng": "SUCCESS",
+    "descInd": "SUKSES"
+  },
+  "result": {
+    "transactionId": "000000000702",
+    "paymentType": "QRIS Payment",
+    "paymentRefId": "ESB123456783",
+    "paymentRefNumber": "GOMOB9877776",
+    "totalAmount": "100000.00",
+    "totalAmountCurrency": "USD",
+    "exchangeRate": {
+      "fromCurrency": "USD",
+      "fromAmount": "1.00",
+      "toCurrency": "IDR",
+      "toAmount": "15000.00"
+    },
+    "poinXtra": {
+      "currency": "USD",
+      "poin": "30000.00",
+      "equivalentTo": "10.00",
+      "poinEquivalentTo": "300000.00"
+    },
+    "tid": {
+      "mpan": "986612371212341567899",
+      "cpan": "123127123112310236716"
+    }
+  }
+}

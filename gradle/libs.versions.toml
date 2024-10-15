@@ -42,6 +42,7 @@ ksp = "1.9.0-1.0.13"
 
 mockk = "1.13.2"
 truth = "1.1.4"
+arcCoreTesting = "2.2.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -119,6 +120,7 @@ testing-mockk-android = { group = "io.mockk", name = "mockk-android", version.re
 testing-mockk-agent = { group = "io.mockk", name = "mockk-agent", version.ref = "mockk" }
 testing-truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 testing-junit = { group = "junit", name = "junit", version.ref = "junit" }
+testing-arch-core = { group = "androidx.arch.core", name = "core-testing", version.ref = "arcCoreTesting" }
 testing-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 testing-androidx-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 
@@ -136,7 +138,7 @@ network-debug = ['network-chucker']
 network-release = ['network-chucker-no-op']
 security = ['security-crypto', 'security-crypto-extension']
 testing = ['testing-mockk', 'testing-mockk-android', 'testing-mockk-agent', 'testing-truth', 'testing-junit', 'testing-androidx-junit', ]
-testing-android = ['testing-androidx-espresso']
+testing-android = ['testing-androidx-espresso', 'testing-arch-core']
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -48,12 +48,13 @@ object ReactiveExtensions {
         callback: (data: BaseResultState<T>) -> Unit,
         onComplete: () -> Unit = {},
         mapper: (T) -> BaseResultState<T> = { BaseResultState.Success(it) },
+        onError: (Throwable) -> BaseResultState<T> = { BaseResultState.Error(it) }
     ): Disposable {
         return subscribeOn(schedulerProvider.io())
             .observeOn(schedulerProvider.ui())
             .map(mapper)
             .startWithItem(BaseResultState.Loading)
-            .onErrorReturn { BaseResultState.Error(it) }
+            .onErrorReturn(onError)
             .doOnComplete(onComplete)
             .subscribe(callback)
     }

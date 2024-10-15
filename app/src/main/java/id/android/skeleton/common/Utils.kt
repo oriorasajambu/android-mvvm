@@ -6,9 +6,11 @@ import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
 import android.os.Parcelable
 import android.view.View
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonElement
-import kotlinx.serialization.json.encodeToJsonElement
+import android.widget.TextView
+import androidx.core.view.isVisible
+import com.google.gson.Gson
+import com.google.gson.JsonObject
+import com.google.gson.JsonParser
 import java.util.Locale
 import kotlin.reflect.KClass
 
@@ -65,12 +67,12 @@ object Utils {
     }
 
     /**
-     * Parses an object into a [JsonElement].
+     * Parses an object into a [JsonObject].
      *
-     * @return The parsed [JsonElement].
+     * @return The parsed [JsonObject].
      */
-    fun Any?.parse(): JsonElement {
-        return Json.encodeToJsonElement(this)
+    fun Any?.parse(): JsonObject {
+        return JsonParser.parseString(Gson().toJson(this)).asJsonObject
     }
 
     /**
@@ -141,5 +143,18 @@ object Utils {
     ): ArrayList<T>? {
         return if (SDK_INT >= 33) this?.getParcelableArrayList(name, clazz.java)
         else this?.getParcelableArrayList(name)
+    }
+
+    fun TextView.setVisibleNotNull(value: String?) {
+        isVisible = !value.isNullOrEmpty()
+        text = value
+    }
+
+    fun String?.checkEmpty() = if (this.isNullOrEmpty()) "-" else this
+
+    fun String?.decimalPart() = when {
+        this.isNullOrEmpty() -> "-"
+        this.toDoubleOrNull() == null -> "-"
+        else -> this.split(".").getOrNull(1) ?: "00"
     }
 }
