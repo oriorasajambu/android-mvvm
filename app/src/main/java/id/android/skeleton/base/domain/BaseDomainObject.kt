@@ -11,10 +11,11 @@ package id.android.skeleton.base.domain
  * @property content The actual content of the object, which can be of type [T]. Defaults to null.
  */
 data class BaseDomainObject<T>(
-    val responseKey: String,
-    val traceId: String,
-    val sourceSystem: String,
-    val message: Message,
+    val timeStamp: String = "",
+    val responseKey: String = "",
+    val traceId: String = "",
+    val sourceSystem: String = "",
+    val message: Message = Message(),
     val content: T? = null,
 ) {
     /**

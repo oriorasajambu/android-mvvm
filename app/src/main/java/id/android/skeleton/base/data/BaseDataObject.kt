@@ -17,6 +17,7 @@ import id.android.skeleton.base.domain.BaseDomainObject
  * @property result The actual result data of the response.
  */
 data class BaseDataObject<T>(
+    @SerializedName("timestamp") val timeStamp: String? = null,
     @SerializedName("responseKey") val responseKey: String? = null,
     @SerializedName("traceId") val traceId: String? = null,
     @SerializedName("sourceSystem") val sourceSystem: String? = null,
@@ -38,22 +39,22 @@ data class BaseDataObject<T>(
         @SerializedName("titleInd") val titleInd: String? = null,
         @SerializedName("descEng") val descEng: String? = null,
         @SerializedName("descInd") val descInd: String? = null,
-    )
-
-    /**
-     * Maps a [BaseDataObject.Message] to a [BaseDomainObject.Message].
-     *
-     * This extension function converts a data message to a domain message, providing default
-     * empty strings for optional properties.
-     *
-     * @return A [BaseDomainObject.Message] instance.
-     */
-    fun Message?.asSample(): BaseDomainObject.Message {
-        return BaseDomainObject.Message(
-            titleEng = this?.titleEng.orEmpty(),
-            titleInd = this?.titleInd.orEmpty(),
-            descEng = this?.descEng.orEmpty(),
-            descInd = this?.descInd.orEmpty()
-        )
+    ) {
+        /**
+         * Maps a [BaseDataObject.Message] to a [BaseDomainObject.Message].
+         *
+         * This extension function converts a data message to a domain message, providing default
+         * empty strings for optional properties.
+         *
+         * @return A [BaseDomainObject.Message] instance.
+         */
+        fun asMessage(): BaseDomainObject.Message {
+            return BaseDomainObject.Message(
+                titleEng = this.titleEng.orEmpty(),
+                titleInd = this.titleInd.orEmpty(),
+                descEng = this.descEng.orEmpty(),
+                descInd = this.descInd.orEmpty()
+            )
+        }
     }
 }

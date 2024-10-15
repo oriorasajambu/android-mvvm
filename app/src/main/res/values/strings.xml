@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Skeleton</string>
+
+    <!-- Section For Reusable Format -->
+    <string name="format_amount" translatable="false">%1$s %2$s.%3$s</string>
+    <string name="format_amount_from_poin" translatable="false">%1$s %2$s.%3$s from %4$s</string>
+    <string name="format_exchange_rate" translatable="false">%1$s %2$s.%3$s = %4$s %5$s.%6$s</string>
+    <string name="fixed_poin_xtra">Poin Xtra</string>
+    <string name="format_mpan">MPAN %1$s</string>
+    <string name="format_cpan">CPAN %1$s</string>
+    <!-- End Section For Reusable Format -->
+
+    <!-- Home Section -->
+    <string name="label_payment_details">Payment Details</string>
+    <string name="label_payment_ref_number">Payment Ref Number</string>
+    <string name="label_total_amount">Total Amount</string>
+    <string name="label_payment_type">Payment Type</string>
+    <string name="label_tid">TID</string>
+    <!-- End Home Section -->
 </resources>

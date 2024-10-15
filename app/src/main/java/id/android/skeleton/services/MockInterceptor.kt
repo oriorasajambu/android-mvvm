@@ -96,7 +96,7 @@ class MockInterceptor (
             )
         }
 
-        if (delay > Constants.Network.CONNECT_TIMEOUT) {
+        if (delay >= Constants.Network.CONNECT_TIMEOUT) {
             return buildResponse(
                 message = TITLE_FAILED_TIME_OUT,
                 headers = headers.build(),
@@ -148,7 +148,6 @@ class MockInterceptor (
         chainRequest: Request,
         content: () -> ResponseBody,
     ): Response {
-        Thread.sleep(delay * 1000L)
         return Response.Builder().apply {
             sentRequestAtMillis(System.currentTimeMillis())
             receivedResponseAtMillis(System.currentTimeMillis() + (delay * 1000L))

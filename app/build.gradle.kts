@@ -98,6 +98,9 @@ android {
         resources.merges.addAll(Configs.Packaging.Type.MERGE.elements)
         resources.excludes.addAll(Configs.Packaging.Type.EXCLUDE.elements)
     }
+    testOptions {
+        unitTests.isReturnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -121,6 +124,7 @@ dependencies {
 
     //Network
     implementation(libs.bundles.network)
+    testImplementation(libs.testing.arch.core)
     debugImplementation(libs.bundles.network.debug)
     releaseImplementation(libs.bundles.network.release)
 
